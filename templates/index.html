@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero-v2">
+    <div class="container hero-content-v2">
+        <h1 class="slide-up">IRON CORE <span>ELITE</span></h1>
+        <p class="fade-in-delay">THE ULTIMATE DARK MODE FITNESS EXPERIENCE. NO EXCUSES. ONLY RESULTS.</p>
+        <div class="hero-actions-v2 slide-up-delay">
+            <a href="{{ url_for('classes') }}" class="btn-neon">Book a Class</a>
+            <a href="{{ url_for('membership') }}" class="btn-outline">Join the Elite</a>
+        </div>
+    </div>
+</section>
+
+<section class="features-v2 container">
+    <div class="feature-card-v2 bounce-on-hover">
+        <div class="feature-icon">⚡</div>
+        <h3>High Intensity</h3>
+        <p>Classes designed to push your limits to the breaking point and beyond.</p>
+    </div>
+    <div class="feature-card-v2 bounce-on-hover">
+        <div class="feature-icon">💳</div>
+        <h3>Elite Payments</h3>
+        <p>Seamless, secure payment systems for all your membership needs.</p>
+    </div>
+    <div class="feature-card-v2 bounce-on-hover">
+        <div class="feature-icon">🛡️</div>
+        <h3>Owner Portal</h3>
+        <p>A specialized management interface for gym owners and elite staff.</p>
+    </div>
+</section>
+{% endblock %}

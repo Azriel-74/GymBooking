@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+    <div class="page-header-v2">
+        <h2>ELITE <span>SCHEDULE</span></h2>
+        <p>CHOOSE YOUR BATTLE. BOOK YOUR SPOT.</p>
+    </div>
+
+    <div class="class-grid-v2">
+        {% for class in classes %}
+        <div class="class-card-v2 zoom-on-hover">
+            <div class="class-time-v2">{{ class.time }}</div>
+            <div class="class-info-v2">
+                <h3>{{ class.name }}</h3>
+                <p>Instructor: <strong>{{ class.instructor }}</strong></p>
+                <p>Spots: <span class="neon-text">{{ class.spots }}</span></p>
+            </div>
+            <a href="{{ url_for('book', class_id=class.id) }}" class="btn-neon-small">Book Now</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

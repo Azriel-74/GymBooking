@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+    <div class="page-header-v2">
+        <h2>OWNER <span>DASHBOARD</span></h2>
+        <p>MANAGE YOUR ELITE FITNESS EMPIRE.</p>
+    </div>
+
+    <div class="dashboard-grid">
+        <div class="dashboard-card slide-up">
+            <h3>Member Check-in</h3>
+            <p>Access the member verification portal to check in elite members.</p>
+            <a href="{{ url_for('checkin') }}" class="btn-neon-small">Go to Check-in</a>
+        </div>
+        <div class="dashboard-card slide-up-delay">
+            <h3>Recent Bookings</h3>
+            <p>Monitor class bookings and class availability in real-time.</p>
+            <a href="{{ url_for('classes') }}" class="btn-outline-small">View Schedule</a>
+        </div>
+    </div>
+
+    <div class="dashboard-table-container slide-up-delay-more">
+        <h3>Active Elite Members</h3>
+        <table class="dark-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Plan</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in members %}
+                <tr>
+                    <td>{{ member.id }}</td>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.plan }}</td>
+                    <td class="{{ 'neon-text' if member.status == 'Active' else 'error-text' }}">{{ member.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

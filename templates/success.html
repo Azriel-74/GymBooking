@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container form-section-v2">
+    <div class="form-card-v2 text-center-v2 slide-up">
+        <div class="success-icon-v2">⚡</div>
+        <h2>ELITE <span>SUCCESS!</span></h2>
+        <p>{{ message }}</p>
+        <hr class="neon-hr">
+        <div class="hero-actions-v2">
+            <a href="{{ url_for('index') }}" class="btn-neon">Return to Base</a>
+            <a href="{{ url_for('classes') }}" class="btn-outline">View Schedule</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

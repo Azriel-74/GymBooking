@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container form-section-v2">
+    <div class="form-card-v2 slide-up">
+        <h2>MEMBER <span>CHECK-IN</span></h2>
+        <p>ENTER MEMBER ID FOR VERIFICATION.</p>
+        <hr class="neon-hr">
+        <form method="POST">
+            <div class="form-group-v2">
+                <label for="member_id">Member ID</label>
+                <input type="text" id="member_id" name="member_id" placeholder="Enter member ID (e.g., M001)" required>
+            </div>
+            <button type="submit" class="btn-neon btn-block">Verify Member</button>
+        </form>
+
+        {% if error %}
+        <div class="alert alert-error-v2 slide-up">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% if member %}
+        <div class="alert alert-success-v2 slide-up">
+            <h3>CHECK-IN SUCCESSFUL!</h3>
+            <p>Member: <strong>{{ member.name }}</strong></p>
+            <p>Plan: <strong>{{ member.plan }}</strong></p>
+            <p>Status: <span class="neon-text">{{ member.status }}</span></p>
+        </div>
+        {% endif %}
+        
+        <a href="{{ url_for('owner_dashboard') }}" class="back-link">Back to Dashboard</a>
+    </div>
+</section>
+{% endblock %}

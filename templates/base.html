@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Core Gym | Dark Mode Elite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <header>
+        <nav class="container">
+            <div class="logo">IRON <span>CORE</span></div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('classes') }}">Classes</a></li>
+                <li><a href="{{ url_for('membership') }}">Membership</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('owner_dashboard') }}" class="owner-link">Owner Portal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="fade-in">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">IRON <span>CORE</span></div>
+            <p>&copy; 2026 Iron Core Gym Management. All rights reserved.</p>
+            <div class="social-links">
+                <span>FB</span> | <span>IG</span> | <span>TW</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

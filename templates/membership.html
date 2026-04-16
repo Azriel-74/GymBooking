@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+    <div class="page-header-v2">
+        <h2>ELITE <span>MEMBERSHIP</span></h2>
+        <p>NO CONTRACTS. JUST GAINS.</p>
+    </div>
+
+    <div class="pricing-grid">
+        {% for plan in plans %}
+        <div class="pricing-card bounce-on-hover">
+            <h3>{{ plan.name }}</h3>
+            <div class="price-tag">{{ plan.price }}</div>
+            <ul class="feature-list">
+                {% for feature in plan.features %}
+                <li>{{ feature }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{{ url_for('payment', item=plan.name) }}" class="btn-neon">Select Plan</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
